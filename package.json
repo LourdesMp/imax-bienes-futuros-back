@@ -1,0 +1,36 @@
+{
+  "name": "imax-bienes-futuros-back",
+  "version": "1.0.0",
+  "description": "Código Backend del proyecto IMAX-Bienes-futuros",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "SET NODE_ENV=dev& nodemon src/server",
+    "qa": "SET MODE_ENV=qa& node src/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LourdesMp/imax-bienes-futuros-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LourdesMp/imax-bienes-futuros-back/issues"
+  },
+  "homepage": "https://github.com/LourdesMp/imax-bienes-futuros-back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "pg": "^8.4.1",
+    "twilio": "^3.50.0"
+  }
+}
