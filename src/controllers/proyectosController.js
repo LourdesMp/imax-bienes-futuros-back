@@ -1,27 +1,23 @@
 const con = require("./config");
 
-const createExpediente = async (req, rest) => {
+const newProyecto = async (req, rest) => {
   
     try {
-        var {IdTipoTramite,AsuntoSolicitud,
-            IdTipoDocumentoSolicitante,NumeroDocumentoSolicitante,
-        Contenido,Direccion,Correo,Celular,Nombres,Apellidos} = req.body;
+        var {IdProyecto,NombreProyecto,
+            Direccion,Promotor,Banco} = req.body;
 
        
 
-        var sql = "INSERT INTO expediente(IdTipoTramite,AsuntoSolicitud,IdTipoDocumentoSolicitante,"+
-        "NumeroDocumentoSolicitante,Contenido,Direccion,Correo,Celular,Apellidos,Nombres) "+
-        "Values(?,?,?,?,?,?,?,?,?,?)";
+        var sql = "INSERT INTO proyectos (IdProyecto,NombreProyecto,Direccion,Promotor,Banco) "+
+        "Values(?,?,?,?,?)";
        // console.log(sql);
-        const result = await con.query(sql,[IdTipoTramite,
-            AsuntoSolicitud,IdTipoDocumentoSolicitante,
-            NumeroDocumentoSolicitante,Contenido,Direccion,
-            Correo,Celular,Apellidos,Nombres], async (err, res) => {
+        const result = await con.query(sql,[IdProyecto,NombreProyecto,Direccion,Promotor,Banco], 
+            async (err, res) => {
             if (err) {
                 console.log(err);
                 return rest.status(404).json({ Data: [], Message: "Error en el servidor", StatusCode: 404 });
             }
-            return rest.status(200).json({ Data: res, Message: "Expediente enviado correctamente", StatusCode: 200 });
+            return rest.status(200).json({ Data: res, Message: "Proyecto enviado correctamente", StatusCode: 200 });
         });
     } catch (error) {
         console.log(error);
@@ -52,6 +48,6 @@ const listProyectos = async (req, rest) => {
 }
 
 module.exports = {
-    createExpediente,
+    newProyecto,
     listProyectos
 }
