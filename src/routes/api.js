@@ -1,6 +1,7 @@
 const express = require("express");
 const apis = express.Router();
 const apiProyectos = require("./api/proyectos");
+const apiTasaciones = require("./api/tasaciones");
 let allowCrossDomain = function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "*");
@@ -37,4 +38,5 @@ apis.use(async (req, res, next) => {
 
 
 apis.use("/proyectos", apiProyectos);
+apis.use("/tasaciones", apiTasaciones);
 module.exports = apis;
