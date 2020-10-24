@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const envJson = require("../env.json");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 //PRODUCCION
 //process.env = envJson["qa"];
