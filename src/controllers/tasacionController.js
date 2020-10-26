@@ -1,17 +1,16 @@
 const con = require("./config");
 
-const newProyecto = async (req, rest) => {
+const newTasacion = async (req, rest) => {
   
     try {
-        var {IdProyecto,NombreProyecto,
-            Direccion,Promotor,Banco} = req.body;
+        var {idTasacion,nombreCliente,dniCliente,nombreConyugue,dniConyugue,tipodeCambio, nombreProyecto,
+            direccionProyecto,promotor,banco, departamento, estacionamiento, deposito, valorVenta, moneda,
+            valorMetroCuadrado, valorComercial,porcentajeRevision} = req.body;
 
-       
-
-        var sql = "INSERT INTO proyectos (IdProyecto,NombreProyecto,Direccion,Promotor,Banco) "+
-        "Values(?,?,?,?,?)";
-       // console.log(sql);
-        const result = await con.query(sql,[IdProyecto,NombreProyecto,Direccion,Promotor,Banco], 
+        var sql = "INSERT INTO tasaciones (idTasacion,nombreCliente,dniCliente,nombreConyugue,dniConyugue,tipodeCambio, nombreProyecto,direccionProyecto,promotor,banco, departamento, estacionamiento, deposito, valorVenta, moneda,valorMetroCuadrado, valorComercial,porcentajeRevision) "+
+        "Values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+       console.log(sql);
+        const result = await con.query(sql,[idTasacion,nombreCliente,dniCliente,nombreConyugue,dniConyugue,tipodeCambio, nombreProyecto,direccionProyecto,promotor,banco, departamento, estacionamiento, deposito, valorVenta, moneda,valorMetroCuadrado, valorComercial,porcentajeRevision], 
             async (err, res) => {
             if (err) {
                 console.log(err);
@@ -48,6 +47,6 @@ const listTasaciones = async (req, rest) => {
 }
 
 module.exports = {
-    newProyecto,
+    newTasacion,
     listTasaciones
 }
