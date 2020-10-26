@@ -3,15 +3,15 @@ const con = require("./config");
 const newProyecto = async (req, rest) => {
   
     try {
-        var {IdProyecto,NombreProyecto,
-            Direccion,Promotor,Banco} = req.body;
+        var {idProyecto,nombreProyecto,
+            direccion,promotor,banco} = req.body;
 
        
 
-        var sql = "INSERT INTO proyectos (IdProyecto,NombreProyecto,Direccion,Promotor,Banco) "+
+        var sql = "INSERT INTO proyectos (idProyecto,nombreProyecto,direccion,promotor,banco) "+
         "Values(?,?,?,?,?)";
        // console.log(sql);
-        const result = await con.query(sql,[IdProyecto,NombreProyecto,Direccion,Promotor,Banco], 
+        const result = await con.query(sql,[idProyecto,nombreProyecto,direccion,promotor,banco], 
             async (err, res) => {
             if (err) {
                 console.log(err);
