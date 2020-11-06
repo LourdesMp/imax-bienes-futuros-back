@@ -6,7 +6,7 @@ var fs = require('fs');
 var https = require('https');
 var http = require('http');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 //PRODUCCION
 //process.env = envJson[process.env.NODE_ENV || "qa"];
@@ -17,6 +17,7 @@ process.env = envJson[process.env.NODE_ENV || "dev"];
 process.env.PORT = port;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
 app.use("/api/v1", api);
 
