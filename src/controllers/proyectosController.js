@@ -5,9 +5,9 @@ const path = require ('path')
 
 const newProyecto =  (req, rest)=> {
     // upload.single('file');
-    //  console.log(req.files);
+     console.log(req.body);
     try {
-        var  {idProyecto,nombreProyecto, direccion,promotor,banco} = req.body;
+        var  {idProyecto,nombreProyecto, promotor,banco} = req.body;
         var nombreData = 'data-'+idProyecto + '.' + req.files.data[0].originalname.split('.').pop();
             var nombreTasacion = 'tasacion-'+idProyecto  + '.' + req.files.tasacion[0].originalname.split('.').pop();
         var data =  'D:\\imax\\imax-bienes-futuros-back\\uploads\\'+nombreData ;
@@ -15,10 +15,10 @@ const newProyecto =  (req, rest)=> {
         // console.log(req.body)
        
    
-        var sql = "INSERT INTO proyectos (nombreProyecto,direccion,promotor,banco,data,tasacion) "+
-        "Values(?,?,?,?,?,?)";
+        var sql = "INSERT INTO prueba.proyectos (nombreProyecto,promotor,banco,data,tasacion) "+
+        "Values(?,?,?,?,?)";
        // console.log(sql);
-        const result =  con.query(sql,[nombreProyecto,direccion,promotor,banco,data,tasacion], 
+        const result =  con.query(sql,[nombreProyecto,promotor,banco,data,tasacion], 
              (err, res) => {
                  console.log(err)
             if (err) {
@@ -63,9 +63,8 @@ const getLastId = async (req, rest) => {
     try {
       //  var {DniSolicitante,Solicitante} = req.body;
 
-       
 
-        var sql = " SELECT (idProyecto+1) AS LastID FROM proyectos ORDER BY idProyecto DESC LIMIT 1";
+        var sql = " SELECT (idProyecto+1) AS LastID FROM prueba.proyectos ORDER BY idProyecto DESC LIMIT 1";
        // console.log(sql);
         const result = await con.query(sql, async (err, res) => {
             if (err) {
@@ -87,7 +86,7 @@ const listProyectos = async (req, rest) => {
 
        
 
-        var sql = " SELECT * FROM proyectos ";
+        var sql = " SELECT * FROM prueba.proyectos ";
        // console.log(sql);
         const result = await con.query(sql, async (err, res) => {
             if (err) {

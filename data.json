@@ -1,0 +1,42 @@
+{
+    "DataProjects": [
+      {
+        "idProyecto": 1,
+        "nombreProyecto": "Las Palmeras",
+        "direccion": "sdfgh",
+        "promotor": "dfgh",
+        "banco": "bcp",
+        "data": "D:\\imax\\imax-bienes-futuros-back\\uploads\\file-1604621413531.xlsx",
+        "tasacion": "D:\\imax\\imax-bienes-futuros-back\\uploads\\tasacion-1604621413534.xlsx"
+      },
+      {
+        "idProyecto": 36,
+        "nombreProyecto": "Las Palmeras",
+        "direccion": "Surquillo",
+        "promotor": "xxxxxxxxxxxxx",
+        "banco": "bcp",
+        "data": "D:\\imax\\imax-bienes-futuros-back\\uploads\\data-36.xlsx",
+        "tasacion": "D:\\imax\\imax-bienes-futuros-back\\uploads\\tasacion-36.xlsx"
+      },
+      {
+        "idProyecto": 37,
+        "nombreProyecto": "Las Palmeras",
+        "direccion": "sadfghjk",
+        "promotor": "asdfghjk",
+        "banco": "bcp",
+        "data": "D:\\imax\\imax-bienes-futuros-back\\uploads\\data-37.xlsx",
+        "tasacion": "D:\\imax\\imax-bienes-futuros-back\\uploads\\tasacion-37.xlsx"
+      },
+      {
+        "idProyecto": 38,
+        "nombreProyecto": "Las Palmeras",
+        "direccion": "sadfghjk",
+        "promotor": "asdfghjk",
+        "banco": "bcp",
+        "data": "D:\\imax\\imax-bienes-futuros-back\\uploads\\data-37.xlsx",
+        "tasacion": "D:\\imax\\imax-bienes-futuros-back\\uploads\\tasacion-37.xlsx"
+      }
+    ],
+    "Message": "",
+    "StatusCode": 200
+  }
