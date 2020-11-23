@@ -25,9 +25,6 @@ const newProyecto =  (req, rest)=> {
              (err, res) => {
                  console.log(err)
             if (err) {
-                
-
-
                 return rest.status(404).json({ DataProjects: [], Message: "Error en el servidor", StatusCode: 404 });
             }
             var nombreDb = 'db_'+idProyecto;
@@ -42,15 +39,9 @@ const newProyecto =  (req, rest)=> {
 
             });
             con.query(sql3,(err,res3) => {
-
             });
-
             con.query(sql4,(err,res4) => {
-
             });
-
-
-            
             return rest.status(200).json({ DataProjects: res, Message: "Proyecto enviado correctamente", StatusCode: 200 });
            
         });
