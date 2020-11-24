@@ -8,7 +8,7 @@ const { json } = require("express");
 
 const newProyecto =  (req, rest)=> {
     // upload.single('file');
-     console.log('hola', req.body);
+    //  console.log('hola', req.body);
     try {
         var  {idProyecto,nombreProyecto, promotor,banco} = req.body;
         var nombreData = 'data-'+idProyecto + '.' + req.files.data[0].originalname.split('.').pop();
